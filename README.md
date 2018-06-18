@@ -2,9 +2,9 @@
 
 React native wheel picker for both iOS and android. (Support DatePicker)
 
-![](screen1.png)
-
 This is not original but inspire by  [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
+
+![](screen1.png)
 
 ## How to use
 
@@ -19,7 +19,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 // use Picker
 <Picker
-  style={{ width: 321, height: 215 }}
+  style={{ backgroundColor: 'white', width: 321, height: 215 }}
   selectedValue='12:15'
   pickerData={['11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '13:00']}
   onValueChange={value => {}}
@@ -27,7 +27,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 // use DatePicker
 <DatePicker
-  style={{ width: 321, height: 215 }}
+  style={{ backgroundColor: 'white', width: 321, height: 215 }}
   mode='date'
   onValueChange={val => {}}
 />
