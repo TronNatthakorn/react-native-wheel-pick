@@ -29,7 +29,6 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 // use DatePicker
 <DatePicker
   style={{ backgroundColor: 'white', height: 215 }}
-  mode='date'
   onDateChange={val => {}}
 />
 
