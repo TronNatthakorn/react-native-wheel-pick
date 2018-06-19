@@ -47,7 +47,7 @@ export default class DatePicker extends PureComponent {
       month: moment.months(),
       date: ''
     },
-    order: 'D-M-Y',
+    order: 'M-D-Y',
     mode: 'date',
     maximumDate: moment().add(10, 'years').toDate(),
     minimumDate: moment().add(-10, 'years').toDate(),
