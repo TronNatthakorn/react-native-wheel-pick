@@ -37,3 +37,5 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 - For iOS use PickerIOS / DatePickerIOS of React Native
 - For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
+
+### Pull request also welcome
