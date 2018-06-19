@@ -20,10 +20,10 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 // use Picker
 <Picker
   style={{ backgroundColor: 'white', height: 215 }}
-  itemSpace={30} // Only Android
   selectedValue='12:15'
   pickerData={['11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '13:00']}
   onValueChange={value => {}}
+  itemSpace={30} // this only support in android
 />
 
 // use DatePicker
@@ -34,3 +34,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 />
 
 ```
+## Note
+
+- For iOS use PickerIOS / DatePickerIOS of React Native
+- For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
