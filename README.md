@@ -31,14 +31,16 @@ const isIos = Platform.OS === 'ios'
 
 // use DatePicker
 <DatePicker
-  style={{ backgroundColor: 'white', height: 215, width: isIos ? 300 : undefined }} // android not support width
+  style={{ backgroundColor: 'white', height: 215, width: isIos ? 300 : undefined }} 
+  // android not support width
   onDateChange={date => { }}
 />
 
 ```
 ## Note
 
-- For iOS use default PickerIOS / DatePickerIOS of React Native
+- Line only has in DatePickerIOS. (Cannot remove this time)
+- For iOS use default PickerIOS / DatePickerIOS of React Native.
 - For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
 
-### Pull request are welcome for more support in future (LineStyle / TextStyle)
+### Pull request are welcome for more support in future (Text / Line Style)
