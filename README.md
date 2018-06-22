@@ -15,27 +15,30 @@ react-native link react-native-wheel-pick
 ## Example code
 
 ```jsx
+import { Platform } from 'react-native';
 import { Picker, DatePicker } from 'react-native-wheel-pick';
+
+const isIos = Platform.OS === 'ios'
 
 // use Picker
 <Picker
-  style={{ backgroundColor: 'white', height: 215 }}
-  selectedValue='12:15'
-  pickerData={['11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '13:00']}
-  onValueChange={value => {}}
+  style={{ backgroundColor: 'white', width: 300, height: 215 }}
+  selectedValue='item4'
+  pickerData={['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7']}
+  onValueChange={value => { }}
   itemSpace={30} // this only support in android
 />
 
 // use DatePicker
 <DatePicker
-  style={{ backgroundColor: 'white', height: 215 }}
-  onDateChange={val => {}}
+  style={{ backgroundColor: 'white', height: 215, width: isIos ? 300 : undefined }} // android not support width
+  onDateChange={date => { }}
 />
 
 ```
 ## Note
 
-- For iOS use PickerIOS / DatePickerIOS of React Native
+- For iOS use default PickerIOS / DatePickerIOS of React Native
 - For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
 
-### Pull request also welcome
+### Pull request are welcome for more support in future (LineStyle / TextStyle)
