@@ -4,7 +4,7 @@ React native wheel picker for both iOS and android. (Support DatePicker)
 
 This is not original but inspire by  [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
-![](screen1.png)
+![](https://preview.ibb.co/iUjDZo/screen1.png)
 
 ## How to use
 
