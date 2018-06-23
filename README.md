@@ -12,6 +12,8 @@ This is not original but inspire by  [react-native-wheel-datepicker](https://git
 npm i react-native-wheel-pick --save
 react-native link react-native-wheel-pick
 ```
+[react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
+
 ## Example code
 
 ```jsx
@@ -48,8 +50,8 @@ const isIos = Platform.OS === 'ios'
 ## Release Note
 
 ### 1.0.5 (June 24 2018)
-- Fix Lifecycle for support React 16
-  (Remove componentWillMount / componentWillReceiveProps)
+- Fix Lifecycle for support React 16 (Remove componentWillMount / componentWillReceiveProps)
+
 [Android]
 - Fix bug onValueChange occur first time without change
 
