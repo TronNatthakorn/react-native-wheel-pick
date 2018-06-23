@@ -9,7 +9,7 @@ This is not original but inspire by  [react-native-wheel-datepicker](https://git
 ## How to use
 
 ```
-npm i react-native-wheel-pick --save
+npm install react-native-wheel-pick
 react-native link react-native-wheel-pick
 ```
 [react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
