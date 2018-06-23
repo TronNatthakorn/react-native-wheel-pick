@@ -3,6 +3,7 @@ import { ColorPropType, requireNativeComponent, View, ViewPropTypes as RNViewPro
 import PropTypes from 'prop-types';
 
 const ViewPropTypes = RNViewPropTypes || View.propTypes;
+let firstTimeOnChange = true
 
 const stateFromProps = (props) => {
   let selectedIndex = 0;
@@ -36,18 +37,13 @@ class WheelCurvedPicker extends PureComponent {
     textColor: '#333',
   };
 
-  onValueChange = ({ nativeEvent: { data } }) => this.props.onValueChange(data);
+  state = {}
 
-  // componentWillMount() {
-  //   this.setState(stateFromProps(this.props));
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState(stateFromProps(nextProps));
-  // }
-
-  componentDidMount() {
-    this.setState(stateFromProps(this.props));
+  onValueChange = ({ nativeEvent: { data } }) => {
+    if(firstTimeOnChange) {
+      return firstTimeOnChange = false
+    }
+    this.props.onValueChange(data); 
   }
 
   static getDerivedStateFromProps(nextProps) {

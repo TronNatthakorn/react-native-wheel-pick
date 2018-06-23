@@ -25,24 +25,12 @@ export default class DatePicker extends PureComponent {
     this.props.onDateChange(date);
   };
 
-  // componentWillMount() {
-  //   this.setState({ date: this.props.date });
-  // }
-
-  componentDidMount() {
-    this.setState({ date: this.props.date });
-  }
-
   static getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.date !== nextProps.date) {
       return { date: nextProps.date }
     }
     else return null;
   }
-
-  // componentWillReceiveProps({ date }) {
-  //   this.setState({ date });
-  // }
 
   render() {
     return (
@@ -52,9 +40,5 @@ export default class DatePicker extends PureComponent {
         date={this.state.date}
       />
     );
-  }
-
-  getValue() {
-    return this.state.date;
   }
 }

@@ -5,6 +5,13 @@ import moment from 'moment';
 import Picker from './picker';
 
 const ViewPropTypes = RNViewPropTypes || View.propTypes;
+const firstTimeOnChange = {
+  year: true,
+  month: true,
+  date: true,
+  hour: true,
+  minute: true,
+}
 
 const styles = StyleSheet.create({
   picker: {
@@ -97,14 +104,6 @@ export default class DatePicker extends PureComponent {
     else return null;
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.state.date !== nextProps.date) {
-  //     this.parseDate(nextProps.date);
-
-  //     this.setState({ date: nextProps.date });
-  //   }
-  // }
-
   parseDate = (date) => {
     const mdate = moment(date);
 
@@ -116,6 +115,9 @@ export default class DatePicker extends PureComponent {
 
     this.newValue.year = year;
     this.checkDate(oldYear, this.newValue.month);
+    if(firstTimeOnChange.year) {
+      return firstTimeOnChange.year = false
+    }
     this.props.onDateChange(this.getValue());
   };
 
@@ -124,22 +126,34 @@ export default class DatePicker extends PureComponent {
 
     this.newValue.month = month - 1;
     this.checkDate(this.newValue.year, oldMonth);
+    if(firstTimeOnChange.month) {
+      return firstTimeOnChange.month = false
+    }
     this.props.onDateChange(this.getValue());
   };
 
   onDateChange = (date) => {
     this.newValue.date = date;
     this.checkDate(this.newValue.year, this.newValue.month);
+    if(firstTimeOnChange.date) {
+      return firstTimeOnChange.date = false
+    }
     this.props.onDateChange(this.getValue());
   };
 
   onHourChange = (hour) => {
     this.newValue.hour = hour;
+    if(firstTimeOnChange.hour) {
+      return firstTimeOnChange.hour = false
+    }
     this.props.onDateChange(this.getValue());
   };
 
   onMinuteChange = (minute) => {
     this.newValue.minute = minute;
+    if(firstTimeOnChange.minute) {
+      return firstTimeOnChange.minute = false
+    }
     this.props.onDateChange(this.getValue());
   };
 
