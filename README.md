@@ -2,8 +2,6 @@
 
 React native wheel picker for both iOS and android. (Support DatePicker)
 
-Now : Support React 16 / Android SDK 26
-
 This is not original but inspire by  [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
 ![](https://preview.ibb.co/iUjDZo/screen1.png)
@@ -46,3 +44,15 @@ const isIos = Platform.OS === 'ios'
 - For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
 
 ### Pull request are welcome for more support in future (Text / Line Style)
+
+## Release Note
+
+### 1.0.5 (June 24 2018)
+- Fix Lifecycle for support React 16
+  (Remove componentWillMount / componentWillReceiveProps)
+[Android]
+- Fix bug onValueChange occur first time without change
+
+### 1.0.4 (June 24 2018)
+[Android]
+- Support compileSDKVersion 26
