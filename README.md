@@ -49,6 +49,11 @@ const isIos = Platform.OS === 'ios'
 
 ## Release Note
 
+### 1.0.7 (June 25 2018)
+
+[Android]
+- Fix bug android value wrong from array
+
 ### 1.0.5 (June 24 2018)
 - Fix Lifecycle for support React 16 (Remove componentWillMount / componentWillReceiveProps)
 
