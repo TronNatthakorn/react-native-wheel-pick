@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 export default class DatePicker extends PureComponent {
   static propTypes = {
     date: PropTypes.instanceOf(Date),
-    minimumDate: PropTypes.instanceOf(Date),
     maximumDate: PropTypes.instanceOf(Date),
+    minimumDate: PropTypes.instanceOf(Date),
     mode: PropTypes.oneOf(['date', 'time', 'datetime']),
     onDateChange: PropTypes.func.isRequired,
   };
@@ -20,18 +20,6 @@ export default class DatePicker extends PureComponent {
     date: new Date(),
   };
 
-  onDateChange = (date) => {
-    this.setState({ date });
-    this.props.onDateChange(date);
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.date !== nextProps.date) {
-      return { date: nextProps.date }
-    }
-    else return null;
-  }
-
   render() {
     return (
       <DatePickerIOS
@@ -40,5 +28,20 @@ export default class DatePicker extends PureComponent {
         date={this.state.date}
       />
     );
+  }
+
+  componentDidMount() {
+    this.setState({ date: this.props.date })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.date !== prevProps.date) {
+      this.setState({ date: this.props.date })
+    }
+  }
+
+  onDateChange = (date) => {
+    this.setState({ date });
+    this.props.onDateChange(date);
   }
 }
