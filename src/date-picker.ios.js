@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 export default class DatePicker extends PureComponent {
   static propTypes = {
-    date: PropTypes.instanceOf(Date).isRequired,
-    maximumDate: PropTypes.instanceOf(Date),
+    date: PropTypes.instanceOf(Date),
     minimumDate: PropTypes.instanceOf(Date),
+    maximumDate: PropTypes.instanceOf(Date),
     mode: PropTypes.oneOf(['date', 'time', 'datetime']),
     onDateChange: PropTypes.func.isRequired,
   };
@@ -17,7 +17,7 @@ export default class DatePicker extends PureComponent {
   };
 
   state = {
-    date: null,
+    date: new Date(),
   };
 
   onDateChange = (date) => {
