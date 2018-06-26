@@ -41,13 +41,40 @@ const isIos = Platform.OS === 'ios'
 ```
 ## Note
 
-- Line only has in DatePickerIOS. (Cannot remove this time)
 - For iOS use default PickerIOS / DatePickerIOS of React Native.
 - For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
+- Line color is white in android. (Support Line style in future. Pull request welcome)
+- Line color is grey in IOS but it has bug line not show in Picker (iOS 11.4 not sure other version).
 
-### Pull request are welcome for more support in future (Text / Line Style)
+### Pull request are welcome for more support in future (Text Style / Line Style / Line Bug)
+
+## More Example
+
+```jsx
+// DatePicker set default choose date
+<DatePicker
+  style={{ height: 215, width: isIos ? 300 : undefined }}
+  date={new Date('2018-06-27')} // Optional prop - default is Today
+  onDateChange={date => { }}
+/>
+
+// DatePicker set min/max Date
+<DatePicker
+  style={{ height: 215, width: isIos ? 300 : undefined }}
+  minimumDate={new Date('2000-01-01')}
+  date={new Date('2018-05-30')}
+  maximumDate={new Date('2050-12-31')}
+  onDateChange={date => { }}
+/>
+```
 
 ## Release Note
+
+### 1.0.8 (June 27 2018)
+- Support props for date picker (date / minimumDate / maximumDate)
+
+[IOS]
+- Fix bug cannot read property 'getTime' of null
 
 ### 1.0.7 (June 25 2018)
 
