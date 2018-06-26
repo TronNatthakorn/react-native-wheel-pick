@@ -62,13 +62,16 @@ const isIos = Platform.OS === 'ios'
 <DatePicker
   style={{ height: 215, width: isIos ? 300 : undefined }}
   minimumDate={new Date('2000-01-01')}
-  date={new Date('2018-05-30')}
   maximumDate={new Date('2050-12-31')}
   onDateChange={date => { }}
 />
 ```
 
 ## Release Note
+
+### 1.0.9 (June 27 2018)
+[IOS]
+- Fix bug props date of DatePicker is not work right.
 
 ### 1.0.8 (June 27 2018)
 - Support props for date picker (date / minimumDate / maximumDate)
