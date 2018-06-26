@@ -37,7 +37,7 @@ export default class DatePicker extends PureComponent {
       date: PropTypes.string,
     }),
     order: PropTypes.string,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.instanceOf(Date),
     maximumDate: PropTypes.instanceOf(Date),
     minimumDate: PropTypes.instanceOf(Date),
     mode: PropTypes.oneOf(['date', 'time', 'datetime']),
