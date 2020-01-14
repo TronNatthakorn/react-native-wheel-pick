@@ -69,6 +69,12 @@ const isIos = Platform.OS === 'ios'
 
 ## Release Note
 
+### 1.1.0 (January 14 2020)
+- Use react-native.config.js instead of rnpm section. [@darkbluesun](https://github.com/darkbluesun)
+
+[Android]
+- Add safeExtGet to get sdk version from root project.[@darkbluesun](https://github.com/darkbluesun)
+
 ### 1.0.9 (June 27 2018)
 [IOS]
 - Fix bug props date of DatePicker is not work right.
