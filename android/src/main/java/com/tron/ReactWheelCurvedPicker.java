@@ -9,7 +9,6 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 
 import com.aigestudio.wheelpicker.WheelPicker;
-import com.aigestudio.wheelpicker.view.WheelCurvedPicker;
 import com.aigestudio.wheelpicker.WheelPicker.OnWheelChangeListener;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
