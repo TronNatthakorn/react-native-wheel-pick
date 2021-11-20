@@ -69,6 +69,9 @@ const isIos = Platform.OS === 'ios'
 
 ## Release Note
 
+### 1.1.1 (November 20 2021)
+- Edit broken url.
+
 ### 1.1.0 (January 14 2020)
 - Use react-native.config.js instead of rnpm section. [@darkbluesun](https://github.com/darkbluesun)
 
