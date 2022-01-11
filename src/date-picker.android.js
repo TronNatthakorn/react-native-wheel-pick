@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
 const stylesFromProps = props => ({
   itemSpace: props.itemSpace,
   textColor: props.textColor,
+  currentTextColor: props.currentTextColor,
   textSize: props.textSize,
   style: props.style,
 });
@@ -44,6 +45,7 @@ export default class DatePicker extends PureComponent {
     onDateChange: PropTypes.func.isRequired,
     style: ViewPropTypes.style,
     textColor: ColorPropType,
+    currentTextColor: ColorPropType,
     textSize: PropTypes.number,
     itemSpace: PropTypes.number,
   };
@@ -60,7 +62,8 @@ export default class DatePicker extends PureComponent {
     minimumDate: moment().add(-10, 'years').toDate(),
     date: new Date(),
     style: null,
-    textColor: '#333',
+    textColor: '#9f9f9f',
+    currentTextColor: "#333"
     textSize: 26,
     itemSpace: 20,
   };
