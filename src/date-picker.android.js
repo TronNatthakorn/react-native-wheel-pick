@@ -63,7 +63,7 @@ export default class DatePicker extends PureComponent {
     date: new Date(),
     style: null,
     textColor: '#9f9f9f',
-    currentTextColor: "#333"
+    currentTextColor: "#333",
     textSize: 26,
     itemSpace: 20,
   };
