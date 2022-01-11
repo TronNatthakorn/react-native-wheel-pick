@@ -96,7 +96,7 @@ export default class DatePicker extends PureComponent {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.date !== nextProps.date) {
+    if (prevState.date !== nextProps.date && this.parseDate) {
       this.parseDate(nextProps.date);
 
       return { date: nextProps.date }
