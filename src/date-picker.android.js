@@ -110,7 +110,7 @@ export default class DatePicker extends PureComponent {
   parseDate = (date) => {
     const mdate = moment(date);
 
-    ['year', 'month', 'date', 'hour', 'minute'].forEach((s) => {this.newValue[s] = mdate.get(s); console.log("s-"+s+": ",mdate.get(s), mdate.get("year"));});
+    ['year', 'month', 'date', 'hour', 'minute'].forEach((s) => {this.newValue[s] = mdate.get(s);});
   }
 
   onYearChange = (year) => {
@@ -342,7 +342,6 @@ export default class DatePicker extends PureComponent {
     tmpNextDate = tmpNextDate.replace("AM", "");
     tmpNextDate = tmpNextDate.replace("PM", "");
     nextDate = new Date(tmpNextDate+ this.state.period);
-    console.log("[nextDate]", nextDate)
 
     if (nextDate < this.props.minimumDate) {
       return this.props.minimumDate;
