@@ -1,8 +1,10 @@
+# FYI
+
 Hey guy I am so sorry, I do not have time to develop this project anymore. :( 
-I recommend you to use this library instead >>> https://github.com/react-native-picker/picker <<<
+I recommend you to use this library instead [https://github.com/react-native-picker/picker](https://github.com/react-native-picker/picker)
 I have many work to do :(
 
-But if you want to pay for my coffee for continue develop this project pls send message directly to https://facebook.com/tron.onlyalone
+I recommend you to fork my project, but if you want to pay for my coffee for continue develop/update this project pls send message directly to [https://facebook.com/tron.onlyalone](https://facebook.com/tron.onlyalone)
 
 # react-native-wheel-pick
 
