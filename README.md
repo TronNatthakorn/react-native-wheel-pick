@@ -55,7 +55,7 @@ const isIos = Platform.OS === 'ios'
 - Line color is white in android. (Support Line style in future. Pull request welcome)
 - Line color is grey in IOS but it has bug line not show in Picker (iOS 11.4 not sure other version).
 
-### Pull request are welcome for more support in future (Text Style / Line Style / Line Bug)
+~~Pull request are welcome for more support in future (Text Style / Line Style / Line Bug)~~
 
 ## More Example
 
