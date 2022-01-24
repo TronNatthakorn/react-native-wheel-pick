@@ -1,6 +1,7 @@
 # FYI
 
-Hey guy I am so sorry, I do not have time to develop this project anymore. :( 
+Hey guy I am so sorry, I do not have time to develop this project anymore. :(
+
 I recommend you to use [https://github.com/react-native-picker/picker](https://github.com/react-native-picker/picker) instead.
 I have many work to do :(
 
