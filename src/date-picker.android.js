@@ -259,7 +259,7 @@ export default class DatePicker extends PureComponent {
         <Picker
           ref={(hour) => { this.hourComponent = hour; }}
           {...propsStyles}
-          selectedValue={this.state.date.getHours() > 12 ? this.state.date.getHours() % 12 : this.state.date.getHours()}
+          selectedValue={this.state.date.getHours() >= 12 ? this.state.date.getHours() % 12 || 12 : this.state.date.getHours() === 0 ? 12 : this.state.date.getHours()}
           pickerData={hours}
           onValueChange={this.onHourChange}
         />
@@ -277,7 +277,7 @@ export default class DatePicker extends PureComponent {
         <Picker
           //ref={(minute) => { this.minuteComponent = minute; }}
           {...propsStyles}
-          selectedValue={this.state.date.getHours() > 12 ? "PM" : "AM"}
+          selectedValue={this.state.date.getHours() >= 12 ? "PM" : "AM"}
           pickerData={["AM", "PM"]}
           onValueChange={this.onPeriodChange}
         />
