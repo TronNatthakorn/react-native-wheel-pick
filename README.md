@@ -78,6 +78,9 @@ const isIos = Platform.OS === 'ios'
 
 ## Release Note
 
+### 1.1.2 (April 13 2022)
+- Edit broken url.
+
 ### 1.1.1 (November 20 2021)
 - Edit broken url.
 
