@@ -21,7 +21,7 @@ export default class Picker extends Component {
     currentTextColor: ColorPropType,
     textSize: PropTypes.number,
     itemSpace: PropTypes.number,
-    itemStyle: ViewPropTypes.style,
+    itemStyle: Text.propTypes.style,
     onValueChange: PropTypes.func.isRequired,
     pickerData: PropTypes.array.isRequired,
     style: ViewPropTypes.style,

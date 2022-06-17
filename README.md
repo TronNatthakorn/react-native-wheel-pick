@@ -1,3 +1,12 @@
+# FYI
+
+Hey guy I am so sorry, I do not have time to develop this project anymore. :(
+
+I recommend you to use [https://github.com/react-native-picker/picker](https://github.com/react-native-picker/picker) instead.
+I have many work to do :(
+
+You can also fork my project, but if you want to pay for my coffee for continue develop/update this project pls send message directly to [https://facebook.com/tron.onlyalone](https://facebook.com/tron.onlyalone)
+
 # react-native-wheel-pick
 
 React native wheel picker for both iOS and android. (Support DatePicker)
@@ -46,7 +55,7 @@ const isIos = Platform.OS === 'ios'
 - Line color is white in android. (Support Line style in future. Pull request welcome)
 - Line color is grey in IOS but it has bug line not show in Picker (iOS 11.4 not sure other version).
 
-### Pull request are welcome for more support in future (Text Style / Line Style / Line Bug)
+~~Pull request are welcome for more support in future (Text Style / Line Style / Line Bug)~~
 
 ## More Example
 
@@ -68,6 +77,9 @@ const isIos = Platform.OS === 'ios'
 ```
 
 ## Release Note
+
+### 1.1.2 (April 13 2022)
+- Edit broken url.
 
 ### 1.1.1 (November 20 2021)
 - Edit broken url.

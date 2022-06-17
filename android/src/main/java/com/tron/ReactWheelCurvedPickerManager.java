@@ -2,7 +2,7 @@ package com.tron;
 
 import android.graphics.Color;
 
-import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
+import com.aigestudio.wheelpicker.WheelPicker;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableType;
 import com.facebook.react.bridge.ReadableMap;
@@ -28,10 +28,20 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
     @Override
     protected ReactWheelCurvedPicker createViewInstance(ThemedReactContext reactContext) {
         ReactWheelCurvedPicker picker = new ReactWheelCurvedPicker(reactContext);
-        picker.setTextColor(Color.LTGRAY);
-        picker.setCurrentTextColor(Color.WHITE);
-        picker.setTextSize(DEFAULT_TEXT_SIZE);
+        picker.setItemTextColor(Color.LTGRAY);
+        picker.setItemTextSize(DEFAULT_TEXT_SIZE);
+        picker.setSelectedItemTextColor(Color.WHITE);
         picker.setItemSpace(DEFAULT_ITEM_SPACE);
+        picker.setIndicator(true);
+        picker.setIndicatorSize(2);
+        picker.setIndicatorColor(Color.WHITE);
+        picker.setCurtain(false);
+        picker.setCurtainColor(Color.YELLOW);
+        picker.setAtmospheric(true);
+        picker.setCurved(true);
+        picker.setVisibleItemCount(5);
+
+        picker.setItemAlign(0);
 
         return picker;
     }
@@ -66,8 +76,8 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
 
     @ReactProp(name="selectedIndex")
     public void setSelectedIndex(ReactWheelCurvedPicker picker, int index) {
-        if (picker != null && picker.getState() == AbstractWheelPicker.SCROLL_STATE_IDLE) {
-            picker.setItemIndex(index);
+        if (picker != null && picker.getState() == WheelPicker.SCROLL_STATE_IDLE) {
+            picker.setSelectedItemPosition(index);
             picker.invalidate();
         }
     }
@@ -76,6 +86,14 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
     public void setTextColor(ReactWheelCurvedPicker picker, Integer color) {
         if (picker != null) {
             picker.setTextColor(color);
+            picker.setItemTextColor(color);
+        }
+    }
+
+    @ReactProp(name="curtainColor", customType = "Color")
+    public void setCurtainColor(ReactWheelCurvedPicker picker, Integer color) {
+        if (picker != null) {
+            picker.setCurtainColor(color);
         }
     }
     
@@ -89,7 +107,7 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
     @ReactProp(name="textSize")
     public void setTextSize(ReactWheelCurvedPicker picker, int size) {
         if (picker != null) {
-            picker.setTextSize((int) PixelUtil.toPixelFromDIP(size));
+            picker.setItemTextSize((int) PixelUtil.toPixelFromDIP(size));
         }
     }
 
@@ -97,6 +115,65 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
     public void setItemSpace(ReactWheelCurvedPicker picker, int space) {
         if (picker != null) {
             picker.setItemSpace((int) PixelUtil.toPixelFromDIP(space));
+        }
+    }
+
+    // 设置滚轮选择器是否显示指示器
+    @ReactProp(name="indicator")
+    public void setIndicator(ReactWheelCurvedPicker picker, boolean hasIndicator) {
+        if (picker != null) {
+            picker.setIndicator(hasIndicator);
+        }
+    }
+    // 设置滚轮选择器指示器颜色
+    @ReactProp(name="indicatorColor", customType = "Color")
+    public void setIndicatorColor(ReactWheelCurvedPicker picker, Integer color) {
+        if (picker != null) {
+            picker.setIndicatorColor(color);
+        }
+    }
+    // 设置滚轮选择器指示器尺寸
+    @ReactProp(name="indicatorSize")
+    public void setIndicatorSize(ReactWheelCurvedPicker picker, int size) {
+        if (picker != null) {
+            picker.setIndicatorSize(size);
+        }
+    }
+
+    // 设置滚轮选择器是否显示幕布
+    @ReactProp(name="curtain")
+    public void setCurtain(ReactWheelCurvedPicker picker, boolean hasCurtain) {
+        if (picker != null) {
+            picker.setCurtain(hasCurtain);
+        }
+    }
+    // 设置滚轮选择器幕布颜色
+    @ReactProp(name="selectTextColor", customType = "Color")
+    public void setSelectedTextColor(ReactWheelCurvedPicker picker, Integer color) {
+        if (picker != null) {
+            picker.setSelectedItemTextColor(color);
+        }
+    }
+
+    // 设置滚轮选择器是否有空气感
+    @ReactProp(name="atmospheric")
+    public void setAtmospheric(ReactWheelCurvedPicker picker, boolean hasAtmospheric) {
+        if (picker != null) {
+            picker.setAtmospheric(hasAtmospheric);
+        }
+    }
+    // 滚轮选择器是否开启卷曲效果
+    @ReactProp(name="curved")
+    public void setCurved(ReactWheelCurvedPicker picker, boolean hasCurved) {
+        if (picker != null) {
+            picker.setCurved(hasCurved);
+        }
+    }
+    // 设置滚轮选择器可见数据项数量
+    @ReactProp(name="visibleItemCount")
+    public void setVisibleItemCount(ReactWheelCurvedPicker picker, int num) {
+        if (picker != null) {
+            picker.setVisibleItemCount(num);
         }
     }
 

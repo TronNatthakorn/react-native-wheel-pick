@@ -27,6 +27,18 @@ class WheelCurvedPicker extends PureComponent {
     currentTextColor: ColorPropType,
     textSize: PropTypes.number,
     itemSpace: PropTypes.number,
+
+    // new props
+    indicatorStyle: PropTypes.object,
+    indicatorSize: PropTypes.number,
+    indicatorColor: ColorPropType,
+    indicator: PropTypes.bool,
+    curtain: PropTypes.bool,
+    curtainColor: ColorPropType,
+    atmospheric: PropTypes.bool,
+    curved: PropTypes.bool,
+    visibleItemCount: PropTypes.number,
+
     onValueChange: PropTypes.func.isRequired,
     selectedValue: PropTypes.any,
     selectedIndex: PropTypes.number,
