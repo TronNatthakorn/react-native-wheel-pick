@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
 const stylesFromProps = props => ({
   itemSpace: props.itemSpace,
   textColor: props.textColor,
+  currentTextColor: props.currentTextColor,
   textSize: props.textSize,
   style: props.style,
 });
@@ -44,6 +45,7 @@ export default class DatePicker extends PureComponent {
     onDateChange: PropTypes.func.isRequired,
     style: ViewPropTypes.style,
     textColor: ColorPropType,
+    currentTextColor: ColorPropType,
     textSize: PropTypes.number,
     itemSpace: PropTypes.number,
   };
@@ -60,7 +62,8 @@ export default class DatePicker extends PureComponent {
     minimumDate: moment().add(-10, 'years').toDate(),
     date: new Date(),
     style: null,
-    textColor: '#333',
+    textColor: '#9f9f9f',
+    currentTextColor: "#333",
     textSize: 26,
     itemSpace: 20,
   };
@@ -70,7 +73,7 @@ export default class DatePicker extends PureComponent {
 
     const { date, minimumDate, maximumDate, labelUnit } = props;
 
-    this.state = { date, monthRange: [], yearRange: [] };
+    this.state = { date, monthRange: [], yearRange: [], period: "AM" };
 
     this.newValue = {};
 
@@ -96,7 +99,7 @@ export default class DatePicker extends PureComponent {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.date !== nextProps.date) {
+    if (prevState.date !== nextProps.date && this.parseDate) {
       this.parseDate(nextProps.date);
 
       return { date: nextProps.date }
@@ -107,7 +110,7 @@ export default class DatePicker extends PureComponent {
   parseDate = (date) => {
     const mdate = moment(date);
 
-    ['year', 'month', 'date', 'hour', 'minute'].forEach((s) => { this.newValue[s] = mdate.get(s); });
+    ['year', 'month', 'date', 'hour', 'minute'].forEach((s) => {this.newValue[s] = mdate.get(s);});
   }
 
   onYearChange = (year) => {
@@ -155,6 +158,16 @@ export default class DatePicker extends PureComponent {
       return firstTimeOnChange.minute = false
     }
     this.props.onDateChange(this.getValue());
+  };
+
+  onPeriodChange = (value) => {
+    this.setState({
+      period: value
+    }, ()=>{
+      this.props.onDateChange(this.getValue());
+    })
+   
+
   };
 
   genDateRange(dayNum) {
@@ -233,7 +246,7 @@ export default class DatePicker extends PureComponent {
 
     const [hours, minutes] = [[], []];
 
-    for (let i = 0; i <= 24; i += 1) {
+    for (let i = 1; i <= 12; i += 1) {
       hours.push(i);
     }
 
@@ -246,7 +259,7 @@ export default class DatePicker extends PureComponent {
         <Picker
           ref={(hour) => { this.hourComponent = hour; }}
           {...propsStyles}
-          selectedValue={this.state.date.getHours()}
+          selectedValue={this.state.date.getHours() >= 12 ? this.state.date.getHours() % 12 || 12 : this.state.date.getHours() === 0 ? 12 : this.state.date.getHours()}
           pickerData={hours}
           onValueChange={this.onHourChange}
         />
@@ -258,6 +271,15 @@ export default class DatePicker extends PureComponent {
           selectedValue={this.state.date.getMinutes()}
           pickerData={minutes}
           onValueChange={this.onMinuteChange}
+        />
+      </View>,
+      <View key='preiod' style={styles.picker}>
+        <Picker
+          //ref={(minute) => { this.minuteComponent = minute; }}
+          {...propsStyles}
+          selectedValue={this.state.date.getHours() >= 12 ? "PM" : "AM"}
+          pickerData={["AM", "PM"]}
+          onValueChange={this.onPeriodChange}
         />
       </View>,
     ];
@@ -314,7 +336,12 @@ export default class DatePicker extends PureComponent {
 
   getValue() {
     const { year, month, date, hour, minute } = this.newValue;
-    const nextDate = new Date(year, month, date, hour, minute);
+    let tmpHour = hour > 12 ? hour % 2 : hour
+    let nextDate = new Date(year, month, date, tmpHour, minute);
+    let tmpNextDate = moment(nextDate).format("LLLL");
+    tmpNextDate = tmpNextDate.replace("AM", "");
+    tmpNextDate = tmpNextDate.replace("PM", "");
+    nextDate = new Date(tmpNextDate+ this.state.period);
 
     if (nextDate < this.props.minimumDate) {
       return this.props.minimumDate;
