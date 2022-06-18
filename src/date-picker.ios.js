@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import DatePickerIOS from 'react-native-date-picker'
+// import { DatePickerIOS } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import PropTypes from 'prop-types';
 
 export default class DatePicker extends PureComponent {
@@ -20,12 +21,16 @@ export default class DatePicker extends PureComponent {
     date: new Date(),
   };
 
+  // @react-native-community/datetimepicker
+  //2022 use value instead of date
+  //2022 use onChange instead of onDateChange (and first param not date anymore)
   render() {
     return (
-      <DatePickerIOS
+      <DateTimePicker
         {...this.props}
-        onDateChange={this.onDateChange}
-        date={this.state.date}
+        onChange={(event, date) => this.onDateChange(date)}
+        display='spinner'
+        value={this.state.date}
       />
     );
   }

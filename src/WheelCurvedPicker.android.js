@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import { ColorPropType, requireNativeComponent, View, ViewPropTypes as RNViewPropTypes } from 'react-native';
+import { requireNativeComponent, View } from 'react-native';
+import { ColorPropType, ViewPropTypes as RNViewPropTypes, } from 'deprecated-react-native-prop-types'
 import PropTypes from 'prop-types';
 
 const ViewPropTypes = RNViewPropTypes || View.propTypes;
@@ -24,45 +25,31 @@ class WheelCurvedPicker extends PureComponent {
     ...ViewPropTypes,
     data: PropTypes.array,
     textColor: ColorPropType,
-    currentTextColor: ColorPropType,
     textSize: PropTypes.number,
-    itemSpace: PropTypes.number,
-
-    // new props
-    indicatorStyle: PropTypes.object,
-    indicatorSize: PropTypes.number,
-    indicatorColor: ColorPropType,
-    indicator: PropTypes.bool,
-    curtain: PropTypes.bool,
-    curtainColor: ColorPropType,
-    atmospheric: PropTypes.bool,
-    curved: PropTypes.bool,
-    visibleItemCount: PropTypes.number,
-
     onValueChange: PropTypes.func.isRequired,
     selectedValue: PropTypes.any,
-    selectedIndex: PropTypes.number,
+    // selectedIndex: PropTypes.number,
   };
 
   static defaultProps = {
     textSize: 26,
-    itemSpace: 20,
-    textColor: '#9f9f9f',
-    currentTextColor: '#333'
+    textColor: '#333',
   };
 
-  state = {}
+  state = {
+    selectedIndex: 0
+  }
 
   onValueChange = ({ nativeEvent: { data } }) => {
+    this.props.onValueChange(data); 
     if(firstTimeOnChange) {
       return firstTimeOnChange = false
     }
-    this.props.onValueChange(data); 
   }
 
-  componentDidMount() {
-    this.setState(stateFromProps(this.props));
-  }
+  // componentDidMount() {
+  //   this.setState(stateFromProps(this.props));
+  // }
 
   static getDerivedStateFromProps(nextProps) {
     return stateFromProps(nextProps)
@@ -89,7 +76,7 @@ class Item extends PureComponent {
   };
 
   // These items don't get rendered directly.
-  render = () => null;
+  render = () => <></>;
 }
 
 WheelCurvedPicker.Item = Item;

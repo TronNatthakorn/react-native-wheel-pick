@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ColorPropType, StyleSheet, View, ViewPropTypes as RNViewPropTypes, Text } from 'react-native';
+import { StyleSheet, View, Text, Platform } from 'react-native';
+import { ColorPropType, ViewPropTypes as RNViewPropTypes, } from 'deprecated-react-native-prop-types'
 import PropTypes from 'prop-types';
 import WheelCurvedPicker from './WheelCurvedPicker';
 
@@ -18,10 +19,8 @@ const styles = StyleSheet.create({
 export default class Picker extends Component {
   static propTypes = {
     textColor: ColorPropType,
-    currentTextColor: ColorPropType,
     textSize: PropTypes.number,
-    itemSpace: PropTypes.number,
-    itemStyle: Text.propTypes.style,
+    itemStyle: ViewPropTypes.style,
     onValueChange: PropTypes.func.isRequired,
     pickerData: PropTypes.array.isRequired,
     style: ViewPropTypes.style,
@@ -29,12 +28,13 @@ export default class Picker extends Component {
   };
 
   static defaultProps = {
-    textColor: '#9f9f9f',
-    currentTextColor: '#333',
+    textColor: '#333',
     textSize: 26,
-    itemSpace: 20,
     itemStyle: null,
-    style: null,
+    // onValueChange: () => {}, // Require
+    // pickerData: [''], // Require
+    style: {},
+    selectedValue: '',
   };
 
   state = {
@@ -46,8 +46,36 @@ export default class Picker extends Component {
     this.props.onValueChange(selectedValue);
   };
 
+  validateDeprecateProps = (oldProp = 'curtain', newProp = '') => {
+    if(this.props){
+      if(typeof this.props[oldProp] !== 'undefined'){
+        this.props[oldProp] = undefined;
+
+        if(newProp === ''){
+          console.warn(`react-native-wheel-pick : "${oldProp}" Prop was deprecated. Please remove it for improve native performance.`)
+        } else {
+          console.warn(`react-native-wheel-pick : "${oldProp}" Prop was deprecated. Please use "${newProp}" instead.`)
+        }
+      }
+    }
+  }
+
   render() {
     const { pickerData, style, ...props } = this.props;
+
+    if(Platform.OS === 'android'){
+      //checkDeprecatedProp
+      this.validateDeprecateProps('atmospheric');
+      this.validateDeprecateProps('curved');
+      this.validateDeprecateProps('visibleItemCount');
+      this.validateDeprecateProps('itemSpace');
+      this.validateDeprecateProps('curtain', 'isShowSelectBackground');
+      this.validateDeprecateProps('curtainColor', 'selectBackgroundColor');
+
+      this.validateDeprecateProps('indicator', 'isShowSelectLine');
+      this.validateDeprecateProps('indicatorColor', 'selectLineColor');
+      this.validateDeprecateProps('indicatorSize', 'selectLineSize');
+    }
 
     return (
       <WheelCurvedPicker
@@ -59,7 +87,7 @@ export default class Picker extends Component {
         {pickerData.map((data, index) => (
           <PickerItem
             key={index}
-            value={typeof data.value !== 'undefined' ? data.value : data}
+            value={typeof data.value !== 'undefined' ? data.value : data.toString()}
             label={typeof data.label !== 'undefined' ? data.label : data.toString()}
           />
         ))}
