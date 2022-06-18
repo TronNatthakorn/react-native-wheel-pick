@@ -1,15 +1,21 @@
-apply plugin: 'com.android.library'
-
-def safeExtGet(prop, fallback) {
-    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+buildscript {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
 
+apply plugin: 'com.android.library'
+
+//def safeExtGet(prop, fallback) {
+//    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+//}
+
 android {
-    compileSdkVersion safeExtGet('compileSdkVersion', 26)
-    buildToolsVersion "27.0.3"
+    compileSdk 30
+    /// buildToolsVersion '30.0.2'
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         ndk {
@@ -20,6 +26,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    //implementation "cn.aigestudio.wheelpicker:WheelPicker:1.0.3"
+    //implementation "cn.aigestudio.wheelpicker:WheelPicker:1.1.2"
+    //https://jitpack.io/com/github/AigeStudio/WheelPicker/5913fa15fc
+    implementation "com.github.AigeStudio:WheelPicker:5913fa15fc"
     implementation 'com.facebook.react:react-native:+'
 }

@@ -8,6 +8,8 @@ import android.graphics.Shader;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 
+// import android.util.Log;
+
 import com.aigestudio.wheelpicker.WheelPicker;
 import com.aigestudio.wheelpicker.WheelPicker.OnWheelChangeListener;
 import com.facebook.react.bridge.Arguments;
@@ -29,7 +31,7 @@ public class ReactWheelCurvedPicker extends WheelPicker {
     private final EventDispatcher mEventDispatcher;
     private List<Object> mValueData;
 
-    private int mState;
+    //private int mState;
 
     public ReactWheelCurvedPicker(ReactContext reactContext) {
         super(reactContext);
@@ -41,6 +43,7 @@ public class ReactWheelCurvedPicker extends WheelPicker {
 
             @Override
             public void onWheelSelected(int position) {
+                // Log.d("onWheelSelected", "Wheel Selected");
                 if (mValueData != null && position < mValueData.size()) {
                     mEventDispatcher.dispatchEvent(
                         new ItemSelectedEvent(getId(), mValueData.get(position)));
@@ -49,7 +52,7 @@ public class ReactWheelCurvedPicker extends WheelPicker {
 
             @Override
             public void onWheelScrollStateChanged(int state) {
-                mState = state;
+                //mState = state;
             }
         });
     }
@@ -63,8 +66,9 @@ public class ReactWheelCurvedPicker extends WheelPicker {
         mValueData = data;
     }
 
-    public int getState() {
-        return mState;
+    public void getState() {
+    //public int getState() {
+        //return state;
     }
 }
 
