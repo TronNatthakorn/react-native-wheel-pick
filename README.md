@@ -125,7 +125,8 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ## Release Note
 
 ### 1.1.5 (June 20 2022)
-  - Fix peerDependency do not break other version. 
+  - Fix peerDependency do not break other version.
+ 
 [Android]
   - Fix WheelCurvedPicker not found for first run.
   - DatePicker support order prop.
