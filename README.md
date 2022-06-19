@@ -46,7 +46,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ## Note
 
 - For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker)
-- For Picker of iOS use [@react-native-picker/picker](hhttps://github.com/react-native-picker/picker)
+- For Picker of iOS use [@react-native-picker/picker](https://github.com/react-native-picker/picker)
 - For Picker and DatePicker of Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
 - Pull request are welcome. 
 
@@ -120,6 +120,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 - Restructure code of Picker iOS and Android.
 - pickerData support array of object.
+
 [Android]
 - Update sdk support for SDK Version 30 (Google Play need sdk version 30+)
 - Now android support for selectLine selectBackground. Special thanks to [@kaisv7n](https://github.com/darkbluesun) for his pull request, 
