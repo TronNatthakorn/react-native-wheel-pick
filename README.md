@@ -97,8 +97,8 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ```
 ```jsx
 // Android Only.
-// These is special prop for Android. (iOS not work)
-// You can also use these prop for DatePicker, too.
+// These is special props for Android. (iOS not work)
+// You can also use these props for DatePicker, too.
 <Picker
   textColor='red'
   textSize={20}
@@ -114,7 +114,10 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 />
 ```
 
-## Release Note 
+## Release Note
+
+### 1.1.4 (June 19 2022)
+- Fix Readme wrong type.
 
 ### 1.1.3 (June 19 2022)
 
@@ -131,6 +134,9 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 If you want it back pull request are welcome.
 - Change some prop name for make code more understandable.
 - If update from version <= 1.1.2. You will get warning about Deprecated prop if you still use, I write some logic for make app not crash. (Please fix warning if possible.)
+
+[IOS]
+- Do not use PickerIOS and DatePickerIOS of 'react-native' anymore.
 
 # FYI
 
