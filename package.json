@@ -17,7 +17,7 @@
     "react-native-wheel-picker"
   ],
   "author": "Tron Natthakorn <tron.natthakorn@engineer.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/TronNatthakorn/react-native-wheel-pick/issues"
   },
