@@ -1,29 +1,153 @@
-# FYI
-
-Hey guy I am so sorry, I do not have time to develop this project anymore. :(
-
-I recommend you to use [https://github.com/react-native-picker/picker](https://github.com/react-native-picker/picker) instead.
-I have many work to do :(
-
-You can also fork my project, but if you want to pay for my coffee for continue develop/update this project pls send message directly to [https://facebook.com/tron.onlyalone](https://facebook.com/tron.onlyalone)
 
 # react-native-wheel-pick
 
 React native wheel picker for both iOS and android. (Support DatePicker)
 
-This is not original but inspire by  [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
-
-![](https://preview.ibb.co/iUjDZo/screen1.png)
+This is not original but inspire by [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
 ## How to use
 
+React Native >= 0.60+
+```
+npm install react-native-wheel-pick
+npx pod-install
+```
+
+React Native < 0.60
 ```
 npm install react-native-wheel-pick
 react-native link react-native-wheel-pick
 ```
 [react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
 
-## Example code
+# Preview
+
+![](https://i.ibb.co/4W7h12M/rn-wl-pk-1-1-13.png)
+
+## Example code 
+```jsx
+import { Picker, DatePicker } from 'react-native-wheel-pick';
+
+// use Picker
+<Picker
+  style={{ backgroundColor: 'white', width: 300, height: 215 }}
+  selectedValue='item4'
+  pickerData={['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7']}
+  onValueChange={value => { console.log(value) }}
+/>
+
+// use DatePicker
+<DatePicker
+  style={{ backgroundColor: 'white', width: 370, height: 240 }} 
+  onDateChange={date => { console.log(date) }}
+/>
+
+```
+## Note
+
+- For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker)
+- For Picker of iOS use [@react-native-picker/picker](hhttps://github.com/react-native-picker/picker)
+- For Picker and DatePicker of Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
+- Pull request are welcome. 
+
+## More Example 
+
+```jsx
+// DatePicker set default select date
+<DatePicker
+  style={{ height: 215, width: 300 }}
+  date={new Date('2018-06-27')} // Optional prop - default is Today
+  onDateChange={date => { console.log(date) }}
+/>
+
+// DatePicker set min/max Date
+<DatePicker
+  style={{ height: 215, width: 300 }}
+  minimumDate={new Date('2000-01-01')}
+  maximumDate={new Date('2050-12-31')}
+  onDateChange={date => { console.log(date) }}
+/>
+
+```
+```jsx
+// pickerData also support array of object.
+
+// Way 1
+<Picker
+  selectedValue='item4'
+  pickerData={['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7']}
+  onValueChange={value => { console.log(value) }}
+/>
+
+// Optional Way 2
+<Picker
+  style={{ backgroundColor: 'white', width: 300, height: 215 }}
+  selectedValue='5765387680'
+  pickerData={[
+    { value : '5765387677', label : 'item1' },
+    { value : '5765387678', label : 'item2' },
+    { value : '5765387679', label : 'item3' },
+    { value : '5765387680', label : 'item4' },
+    { value : '5765387681', label : 'item5' },
+    { value : '5765387682', label : 'item6' },
+    { value : '5765387683', label : 'item7' },
+  ]}
+  onValueChange={value => { console.log(value) }}
+/>
+```
+```jsx
+// Android Only.
+// These is special prop for Android. (iOS not work)
+// You can also use these prop for DatePicker, too.
+<Picker
+  textColor='red'
+  textSize={20}
+
+  selectTextColor='green'
+  isShowSelectBackground={false} // Default is true
+  selectBackgroundColor='#8080801A' // support HEXA color Style (#rrggbbaa)
+  // (Please always set 'aa' value for transparent)
+  
+  isShowSelectLine={false} // Default is true
+  selectLineColor='black'
+  selectLineSize={6} // Default is 4
+/>
+```
+
+## Release Note 
+
+### 1.1.3 (June 19 2022)
+
+- Restructure code of Picker iOS and Android.
+- pickerData support array of object.
+[Android]
+- Update sdk support for SDK Version 30 (Google Play need sdk version 30+)
+- Now android support for selectLine selectBackground. Special thanks to [@kaisv7n](https://github.com/darkbluesun) for his pull request, 
+[Update WheelPicker version, exposed more methods and fixed crash on android](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/12) I changed prop name for more understandable.
+
+- DatePicker of Android also support width.
+- Deprecated some android prop that make library faster. (Atmospheric / Curved / visibleItemCount / itemSpace)
+If you want it back pull request are welcome.
+- Change some prop name for make code more understandable.
+- If update from version <= 1.1.2. You will get warning about Deprecated prop if you still use, I write some logic for make app not crash. (Please fix warning if possible.)
+
+# FYI
+
+For version 1.1.3 - I update this library support for React Native Version 0.68 / Android 11 / iOS 15.2
+
+If you use React Native Version less than 0.68 / Android older than 11 / iOS older than 15.2. 
+It is possible to have unexpected bug.
+
+I rarely check this lib. Up on my life's time.
+
+If you want to pay me coffee for check & merge your request. Please contact me directly [facebook.com/tron.natthakorn](https://facebook.com/tron.natthakorn)
+
+## Preview for version <= 1.12
+
+![](https://preview.ibb.co/iUjDZo/screen1.png)
+
+
+## Example code for version <= 1.12
 
 ```jsx
 import { Platform } from 'react-native';
@@ -48,16 +172,14 @@ const isIos = Platform.OS === 'ios'
 />
 
 ```
-## Note
+## Note for version <= 1.12
 
 - For iOS use default PickerIOS / DatePickerIOS of React Native.
 - For Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
 - Line color is white in android. (Support Line style in future. Pull request welcome)
 - Line color is grey in IOS but it has bug line not show in Picker (iOS 11.4 not sure other version).
 
-~~Pull request are welcome for more support in future (Text Style / Line Style / Line Bug)~~
-
-## More Example
+## More Example for version <= 1.12
 
 ```jsx
 // DatePicker set default choose date
@@ -76,7 +198,7 @@ const isIos = Platform.OS === 'ios'
 />
 ```
 
-## Release Note
+## Release Note for version <= 1.12
 
 ### 1.1.2 (April 13 2022)
 - Edit broken url.
