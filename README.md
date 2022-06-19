@@ -5,24 +5,28 @@ React native wheel picker for both iOS and android. (Support DatePicker)
 
 This is not original but inspire by [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
+# Preview
+
+![](https://i.ibb.co/4W7h12M/rn-wl-pk-1-1-13.png)
+
 ## How to use
 
 React Native >= 0.60+
 ```
 npm install react-native-wheel-pick
 npx pod-install
+
+npx react-native run-android // re-build native-code for gradle
 ```
 
 React Native < 0.60
 ```
 npm install react-native-wheel-pick
 react-native link react-native-wheel-pick
+
+react-native run-android // re-build native-code for gradle
 ```
 [react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
-
-# Preview
-
-![](https://i.ibb.co/4W7h12M/rn-wl-pk-1-1-13.png)
 
 ## Example code 
 ```jsx
@@ -112,9 +116,19 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
   selectLineColor='black'
   selectLineSize={6} // Default is 4
 />
-```
 
+// Android Only.
+<DatePicker
+  order='D-M-Y' // Default is M-D-Y
+/>
+```
 ## Release Note
+
+### 1.1.5 (June 20 2022)
+  - Fix peerDependency do not break other version. 
+[Android]
+  - Fix WheelCurvedPicker not found for first run.
+  - DatePicker support order prop.
 
 ### 1.1.4 (June 19 2022)
 - Fix Readme wrong type.
@@ -126,7 +140,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 [Android]
 - Update sdk support for SDK Version 30 (Google Play need sdk version 30+)
-- Now android support for selectLine selectBackground. Special thanks to [@kaisv7n](https://github.com/darkbluesun) for his pull request, 
+- Now android support for style of selectLine / selectBackground. Special thanks to [@kaisv7n](https://github.com/kaisv7n) for his pull request, 
 [Update WheelPicker version, exposed more methods and fixed crash on android](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/12) I changed prop name for more understandable.
 
 - DatePicker of Android also support width.
@@ -145,14 +159,13 @@ For version 1.1.3 - I update this library support for React Native Version 0.68 
 If you use React Native Version less than 0.68 / Android older than 11 / iOS older than 15.2. 
 It is possible to have unexpected bug.
 
-I rarely check this lib. Up on my life's time.
+I rarely check this lib. (6 Months - 3 Years). Up on my life's time.
 
-If you want to pay me coffee for check & merge your request. Please contact me directly [facebook.com/tron.natthakorn](https://facebook.com/tron.natthakorn)
+If you want to pay me coffee for quickly check & merge your request. Please contact me directly [facebook.com/tron.natthakorn](https://facebook.com/tron.natthakorn) OR you can fork this project.
 
 ## Preview for version <= 1.12
 
 ![](https://preview.ibb.co/iUjDZo/screen1.png)
-
 
 ## Example code for version <= 1.12
 
