@@ -12,10 +12,9 @@
   },
   "keywords": [
     "react-native",
-    "picker",
-    "wheel",
-    "wheel-pick",
-    "wheel-picker"
+    "react-native-wheel",
+    "react-native-wheel-pick",
+    "react-native-wheel-picker"
   ],
   "author": "Tron Natthakorn <tron.natthakorn@engineer.com>",
   "license": "MIT",
