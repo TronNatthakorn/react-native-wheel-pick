@@ -155,9 +155,9 @@ If you want it back pull request are welcome.
 
 # FYI
 
-For version 1.1.3 - I update this library support for React Native Version 0.68 / Android 11 / iOS 15.2
+For version 1.1.3 - I update this library support for React Native Version 0.68.2 / Android 11 / iOS 15.2
 
-If you use React Native Version less than 0.68 / Android older than 11 / iOS older than 15.2. 
+If you use React Native Version less than 0.68.2 / Android older than 11 / iOS older than 15.2. 
 It is possible to have unexpected bug.
 
 I rarely check this lib. (6 Months - 3 Years). Up on my life's time.
