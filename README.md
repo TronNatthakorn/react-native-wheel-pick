@@ -3,7 +3,7 @@
 
 React native wheel picker for both iOS and android. (Support DatePicker)
 
-This is not original but inspire by [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
+This is not original but inspired by [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
 # Preview
 
@@ -29,6 +29,7 @@ react-native run-android // re-build native-code for gradle
 [react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
 
 ## Example code 
+
 ```jsx
 import { Picker, DatePicker } from 'react-native-wheel-pick';
 
