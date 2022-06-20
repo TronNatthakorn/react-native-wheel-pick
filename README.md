@@ -1,6 +1,5 @@
 
-# react-native-wheel-pick
-[react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
+# [react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
 
 React native wheel picker for both iOS and android. (Support DatePicker)
 
@@ -33,7 +32,6 @@ React Native < 0.60
 ```
 npm install react-native-wheel-pick
 react-native link react-native-wheel-pick
-
 ```
 ## Example code 
 
@@ -124,6 +122,9 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 />
 ```
 ## Release Note
+
+### 1.1.6 (June 20 2022)
+- Add more step for How to use
 
 ### 1.1.5 (June 20 2022)
 - Change License from MIT to Apache-2.0
