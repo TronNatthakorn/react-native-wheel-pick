@@ -49,8 +49,8 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ```
 ## Note
 
-- For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker)
 - For Picker of iOS use [@react-native-picker/picker](https://github.com/react-native-picker/picker)
+- For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker) 
 - For Picker and DatePicker of Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
 - Pull request are welcome. 
 
@@ -126,6 +126,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 ### 1.1.5 (June 20 2022)
 - Change License from MIT to Apache-2.0
+- Add NOTICE file for credit original author.
 - Fix peerDependency do not break other version.
  
 [Android]
@@ -136,7 +137,6 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 - Fix Readme wrong type.
 
 ### 1.1.3 (June 19 2022)
-
 - Restructure code of Picker iOS and Android.
 - pickerData support array of object.
 
