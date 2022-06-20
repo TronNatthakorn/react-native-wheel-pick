@@ -1,5 +1,6 @@
 
 # react-native-wheel-pick
+[react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
 
 React native wheel picker for both iOS and android. (Support DatePicker)
 
@@ -9,13 +10,22 @@ This is not original but inspired by [react-native-wheel-datepicker](https://git
 
 ![](https://i.ibb.co/4W7h12M/rn-wl-pk-1-1-13.png)
 
+## Note
+
+- For Picker of iOS use [@react-native-picker/picker](https://github.com/react-native-picker/picker)
+- For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker) 
+- For Picker and DatePicker of Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
+
 ## How to use
 
 React Native >= 0.60+
 ```
 npm install react-native-wheel-pick
+npm install @react-native-picker/picker --save
+npm install @react-native-community/datetimepicker --save
 npx pod-install
 
+npx react-native run-ios // re-build native-code
 npx react-native run-android // re-build native-code for gradle
 ```
 
@@ -24,10 +34,7 @@ React Native < 0.60
 npm install react-native-wheel-pick
 react-native link react-native-wheel-pick
 
-react-native run-android // re-build native-code for gradle
 ```
-[react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
-
 ## Example code 
 
 ```jsx
@@ -48,13 +55,6 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 />
 
 ```
-## Note
-
-- For Picker of iOS use [@react-native-picker/picker](https://github.com/react-native-picker/picker)
-- For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker) 
-- For Picker and DatePicker of Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
-- Pull request are welcome. 
-
 ## More Example 
 
 ```jsx
