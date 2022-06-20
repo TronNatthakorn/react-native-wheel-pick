@@ -125,11 +125,12 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ## Release Note
 
 ### 1.1.5 (June 20 2022)
-  - Fix peerDependency do not break other version.
+- Change License from MIT to Apache-2.0
+- Fix peerDependency do not break other version.
  
 [Android]
-  - Fix WheelCurvedPicker not found for first run.
-  - DatePicker support order prop.
+- Fix WheelCurvedPicker not found for first run.
+- DatePicker support order prop.
 
 ### 1.1.4 (June 19 2022)
 - Fix Readme wrong type.
@@ -257,3 +258,19 @@ const isIos = Platform.OS === 'ios'
 ### 1.0.4 (June 24 2018)
 [Android]
 - Support compileSDKVersion 26
+
+## License
+
+    Copyright 2022 tron.natthakorn@engineer.com
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
