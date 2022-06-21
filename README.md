@@ -5,7 +5,7 @@ React native wheel picker for both iOS and android. (Support DatePicker)
 
 This is not original but inspired by [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
-# Preview
+## Preview
 
 ![](https://i.ibb.co/4W7h12M/rn-wl-pk-1-1-13.png)
 
@@ -13,7 +13,7 @@ This is not original but inspired by [react-native-wheel-datepicker](https://git
 
 - For Picker of iOS use [@react-native-picker/picker](https://github.com/react-native-picker/picker)
 - For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker) 
-- For Picker and DatePicker of Android use WheelPicker of [WheelPicker](https://github.com/AigeStudio/WheelPicker)
+- For Picker and DatePicker of Android use WheelPicker of [AigeStudio](https://github.com/AigeStudio/WheelPicker)
 
 ## How to use
 
@@ -123,6 +123,10 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ```
 ## Release Note
 
+### 1.1.7 (June 21 2022)
+[Android]
+- compileSdk -> compileSdkVersion
+
 ### 1.1.6 (June 20 2022)
 - Add more step for How to use
 
@@ -144,9 +148,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 [Android]
 - Update sdk support for SDK Version 30 (Google Play need sdk version 30+)
-- Now android support for style of selectLine / selectBackground. Special thanks to [@kaisv7n](https://github.com/kaisv7n) for his pull request, 
-[Update WheelPicker version, exposed more methods and fixed crash on android](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/12) I changed prop name for more understandable.
-
+- Now android support for style of selectLine / selectBackground. Special thanks to [@kaisv7n](https://github.com/kaisv7n) for his pull request, [Update WheelPicker version, exposed more methods and fixed crash on android](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/12) I changed prop name for more understandable.
 - DatePicker of Android also support width.
 - Deprecated some android prop that make library faster. (Atmospheric / Curved / visibleItemCount / itemSpace)
 If you want it back pull request are welcome.
@@ -156,7 +158,7 @@ If you want it back pull request are welcome.
 [IOS]
 - Do not use PickerIOS and DatePickerIOS of 'react-native' anymore.
 
-# FYI
+## FYI
 
 For version 1.1.3 - I update this library support for React Native Version 0.68.2 / Android 11 / iOS 15.2
 
