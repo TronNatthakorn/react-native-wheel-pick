@@ -19,7 +19,7 @@ This is not original but inspired by [react-native-wheel-datepicker](https://git
 
 React Native >= 0.60+
 ```
-npm install react-native-wheel-pick
+npm install react-native-wheel-pick --save
 npm install @react-native-picker/picker --save
 npm install @react-native-community/datetimepicker --save
 npx pod-install
