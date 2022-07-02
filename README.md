@@ -123,7 +123,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ```
 ## Release Note
 
-### 1.1.8 (July 3 2022)
+### 1.1.9 (July 3 2022)
 - Support for peer dependencies React 18 by `--legacy-peer-deps`
 
 ### 1.1.7 (June 21 2022)
