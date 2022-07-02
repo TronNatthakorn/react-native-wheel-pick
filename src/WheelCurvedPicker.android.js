@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { requireNativeComponent, View } from 'react-native';
-import { ColorPropType, ViewPropTypes as RNViewPropTypes, } from 'deprecated-react-native-prop-types'
+// import { ColorPropType, ViewPropTypes as RNViewPropTypes, } from 'deprecated-react-native-prop-types'
 import PropTypes from 'prop-types';
 
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
+// const ViewPropTypes = RNViewPropTypes || View.propTypes;
 let firstTimeOnChange = true
 
 const stateFromProps = (props) => {
@@ -22,9 +22,9 @@ const stateFromProps = (props) => {
 
 class WheelCurvedPicker extends PureComponent {
   static propTypes = {
-    ...ViewPropTypes,
+    // ...ViewPropTypes,
     data: PropTypes.array,
-    textColor: ColorPropType,
+    // textColor: ColorPropType,
     textSize: PropTypes.number,
     onValueChange: PropTypes.func.isRequired,
     selectedValue: PropTypes.any,

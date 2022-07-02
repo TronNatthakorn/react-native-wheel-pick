@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ColorPropType, ViewPropTypes as RNViewPropTypes } from 'deprecated-react-native-prop-types'
+// import { ColorPropType, ViewPropTypes as RNViewPropTypes } from 'deprecated-react-native-prop-types'
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Picker from './picker';
 
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
+// const ViewPropTypes = RNViewPropTypes || View.propTypes;
 const firstTimeOnChange = {
   year: true,
   month: true,
@@ -42,8 +42,8 @@ export default class DatePicker extends PureComponent {
     minimumDate: PropTypes.instanceOf(Date),
     mode: PropTypes.oneOf(['date', 'time', 'datetime']),
     onDateChange: PropTypes.func.isRequired,
-    style: ViewPropTypes.style,
-    textColor: ColorPropType,
+    // style: ViewPropTypes.style,
+    // textColor: ColorPropType,
     textSize: PropTypes.number,
   };
 

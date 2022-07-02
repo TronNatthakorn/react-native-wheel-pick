@@ -20,8 +20,8 @@ This is not original but inspired by [react-native-wheel-datepicker](https://git
 React Native >= 0.60+
 ```
 npm install react-native-wheel-pick --save --legacy-peer-deps
-npm install @react-native-picker/picker --save
-npm install @react-native-community/datetimepicker --save
+npm install @react-native-picker/picker --save --legacy-peer-deps
+npm install @react-native-community/datetimepicker --save --legacy-peer-deps
 npx pod-install
 
 npx react-native run-ios // re-build native-code
@@ -123,7 +123,8 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 ```
 ## Release Note
 
-### 1.1.9 (July 3 2022)
+### 1.2.0 (July 3 2022)
+- Remove `deprecated-react-native-prop-types`
 - Support for peer dependencies React 18 by `--legacy-peer-deps`
 
 ### 1.1.7 (June 21 2022)
