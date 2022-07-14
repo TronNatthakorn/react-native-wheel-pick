@@ -83,6 +83,8 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 />
 
 // Optional Way 2
+// `label` only use for show Text to UI.
+// You cannot get `label` from onValueChange
 <Picker
   style={{ backgroundColor: 'white', width: 300, height: 215 }}
   selectedValue='5765387680'
