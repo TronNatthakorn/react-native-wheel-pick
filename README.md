@@ -73,7 +73,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
 
 ```
 ```jsx
-// pickerData also support array of object.
+// pickerData also support array of object. (Optional)
 
 // Way 1
 <Picker
@@ -97,7 +97,7 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
     { value : '5765387682', label : 'item6' },
     { value : '5765387683', label : 'item7' },
   ]}
-  onValueChange={value => { console.log(value) }}
+  onValueChange={value => { console.log(value) }} // '5765387680'
 />
 ```
 ```jsx
