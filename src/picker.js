@@ -21,7 +21,15 @@ export default class Picker extends Component {
     textSize: PropTypes.number,
     // itemStyle: ViewPropTypes.style,
     onValueChange: PropTypes.func.isRequired,
-    pickerData: PropTypes.array.isRequired,
+    pickerData: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          value: PropTypes.string.isRequired,
+          label: PropTypes.string.isRequired,
+        }),
+      ])
+    ).isRequired,
     // style: ViewPropTypes.style,
     selectedValue: PropTypes.any,
   };
@@ -40,9 +48,20 @@ export default class Picker extends Component {
     selectedValue: this.props.selectedValue,
   };
 
+  _pickerDataType = '';
+
   handleChange = (selectedValue) => {
     this.setState({ selectedValue });
-    this.props.onValueChange(selectedValue);
+    if (this._pickerDataType === 'object') {
+      const value = this.props.pickerData.find(e => e.value === selectedValue);
+      if (value) {
+        this.props.onValueChange(value);
+      } else {
+        this.props.onValueChange(selectedValue);
+      }
+    } else {
+      this.props.onValueChange(selectedValue);
+    }
   };
 
   validateDeprecateProps = (oldProp = 'curtain', newProp = '') => {
@@ -92,6 +111,14 @@ export default class Picker extends Component {
         ))}
       </WheelCurvedPicker>
     );
+  }
+
+  componentDidMount() {
+    if (this.props.pickerData.every(e => typeof e === 'object')) {
+      this._pickerDataType = 'object';
+    } else {
+      this._pickerDataType = 'string';
+    }
   }
 
   getValue() {
