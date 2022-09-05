@@ -36,10 +36,6 @@ export default class Picker extends Component {
     selectedValue: '',
   };
 
-  state = {
-    selectedValue: this.props.selectedValue,
-  };
-
   handleChange = (selectedValue) => {
     this.setState({ selectedValue });
     this.props.onValueChange(selectedValue);
@@ -80,7 +76,7 @@ export default class Picker extends Component {
       <WheelCurvedPicker
         {...props}
         style={[styles.picker, style]}
-        selectedValue={this.state.selectedValue}
+        selectedValue={this.props.selectedValue}
         onValueChange={this.handleChange}
       >
         {pickerData.map((data, index) => (
@@ -95,6 +91,6 @@ export default class Picker extends Component {
   }
 
   getValue() {
-    return this.state.selectedValue;
+    return this.props.selectedValue;
   }
 }
