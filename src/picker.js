@@ -37,7 +37,6 @@ export default class Picker extends Component {
   };
 
   handleChange = (selectedValue) => {
-    this.setState({ selectedValue });
     this.props.onValueChange(selectedValue);
   };
 
