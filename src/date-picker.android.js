@@ -320,7 +320,7 @@ export default class DatePicker extends PureComponent {
 
   getValue() {
     const { year, month, date, hour, minute } = this.newValue;
-    const nextDate = new Date(year, month, date, hour, minute);
+    const nextDate = new Date(Date.UTC(year, month, date, hour, minute));
 
     if (nextDate < this.props.minimumDate) {
       return this.props.minimumDate;
