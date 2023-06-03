@@ -19,9 +19,9 @@ This is not original but inspired by [react-native-wheel-datepicker](https://git
 
 React Native >= 0.60+
 ```
-npm install react-native-wheel-pick --save --legacy-peer-deps
-npm install @react-native-picker/picker --save --legacy-peer-deps
-npm install @react-native-community/datetimepicker --save --legacy-peer-deps
+npm install react-native-wheel-pick --save-dev --legacy-peer-deps
+npm install @react-native-picker/picker --save-dev --legacy-peer-deps
+npm install @react-native-community/datetimepicker --save-dev --legacy-peer-deps
 npx pod-install
 
 npx react-native run-ios // re-build native-code
@@ -51,6 +51,10 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
   style={{ backgroundColor: 'white', width: 370, height: 240 }} 
   onDateChange={date => { console.log(date) }}
 />
+
+// for TypeScript
+onValueChange={(value: string) => { console.log(value) }}
+onDateChange={(date: Date) => { console.log(date) }}
 
 ```
 ## More Example 
@@ -123,7 +127,24 @@ import { Picker, DatePicker } from 'react-native-wheel-pick';
   order='D-M-Y' // Default is M-D-Y
 />
 ```
+## FYI
+
+I rarely check this lib. (6 Months - 3 Years). Up on my life's time.
+
+If you want to pay me coffee for quickly check & merge your request. 
+You can sponsor me 
+
+[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/TronNatthakorn) 
+
+OR you can fork this project instead.
+
 ## Release Note
+
+### 1.2.1 (June 4 2023)
+- Fix typescript warning
+
+[Android]
+- Update compileSDK to version 33.
 
 ### 1.2.0 (July 3 2022)
 - Remove `deprecated-react-native-prop-types`
@@ -163,17 +184,6 @@ If you want it back pull request are welcome.
 
 [IOS]
 - Do not use PickerIOS and DatePickerIOS of 'react-native' anymore.
-
-## FYI
-
-For version 1.1.3 - I update this library support for React Native Version 0.68.2 / Android 11 / iOS 15.2
-
-If you use React Native Version less than 0.68.2 / Android older than 11 / iOS older than 15.2. 
-It is possible to have unexpected bug.
-
-I rarely check this lib. (6 Months - 3 Years). Up on my life's time.
-
-If you want to pay me coffee for quickly check & merge your request. Please contact me directly [facebook.com/tron.natthakorn](https://facebook.com/tron.natthakorn) OR you can fork this project.
 
 ## Preview for version <= 1.12
 
