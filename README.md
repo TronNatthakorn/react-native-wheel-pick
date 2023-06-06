@@ -60,6 +60,9 @@ onDateChange={(date: Date) => { console.log(date) }}
 ## More Example 
 
 ```jsx
+// Set Text Color
+<Picker textColor="red" />
+
 // DatePicker set default select date
 <DatePicker
   style={{ height: 215, width: 300 }}
@@ -109,7 +112,6 @@ onDateChange={(date: Date) => { console.log(date) }}
 // These is special props for Android. (iOS not work)
 // You can also use these props for DatePicker, too.
 <Picker
-  textColor='red'
   textSize={20}
 
   selectTextColor='green'
@@ -139,6 +141,9 @@ You can sponsor me
 OR you can fork this project instead.
 
 ## Release Note
+### 1.2.2 (June 7 2023)
+[iOS]
+- Now iOS can use `textColor`, too. [Add missing color option for iOS](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/38) [@aurotones](https://github.com/aurotones)
 
 ### 1.2.1 (June 4 2023)
 - Fix typescript warning
