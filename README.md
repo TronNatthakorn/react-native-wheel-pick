@@ -80,20 +80,19 @@ onDateChange={(date: Date) => { console.log(date) }}
 
 ```
 ```jsx
-// pickerData also support array of object. (Optional)
+// pickerData also support array of object. (Optional Way)
 
-// Way 1
+// Normal Way
 <Picker
   selectedValue='item4'
   pickerData={['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7']}
   onValueChange={value => { console.log(value) }}
 />
 
-// Optional Way 2
+// Optional Way
 // `label` only use for show Text to UI.
 // You cannot get `label` from onValueChange
 <Picker
-  style={{ backgroundColor: 'white', width: 300, height: 215 }}
   selectedValue='5765387680'
   pickerData={[
     { value : '5765387677', label : 'item1' },
