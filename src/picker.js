@@ -76,22 +76,32 @@ export default class Picker extends Component {
       this.validateDeprecateProps('indicatorSize', 'selectLineSize');
     }
 
+    let itemStyle = {}
+    if (Platform.OS === 'ios'){
+      if (props.textSize){
+        itemStyle["fontSize"] = props.textSize;
+      }
+      if (props.textColor){
+        itemStyle["color"] = props.textColor;
+      }
+    }
+
     return (
-      <WheelCurvedPicker
-        {...props}
-        style={[styles.picker, style]}
-        selectedValue={this.state.selectedValue}
-        onValueChange={this.handleChange}
-      >
-        {pickerData.map((data, index) => (
-          <PickerItem
-            key={index}
-            value={typeof data.value !== 'undefined' ? data.value : data.toString()}
-            label={typeof data.label !== 'undefined' ? data.label : data.toString()}
-            color={props.textColor}
-          />
-        ))}
-      </WheelCurvedPicker>
+        <WheelCurvedPicker
+            {...props}
+            itemStyle={itemStyle}
+            style={[styles.picker, style]}
+            selectedValue={this.state.selectedValue}
+            onValueChange={this.handleChange}
+        >
+          {pickerData.map((data, index) => (
+              <PickerItem
+                  key={index}
+                  value={typeof data.value !== 'undefined' ? data.value : data.toString()}
+                  label={typeof data.label !== 'undefined' ? data.label : data.toString()}
+              />
+          ))}
+        </WheelCurvedPicker>
     );
   }
 
