@@ -26,7 +26,7 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
 
     private static final int DEFAULT_TEXT_SIZE = 24 * 2;
     private static final int DEFAULT_ITEM_SPACE = 16 * 2;
-
+    private int selectedIndex = -1;
     @Override
     public Map getExportedCustomDirectEventTypeConstants() {
         return MapBuilder.of(
@@ -76,6 +76,9 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
             }
             picker.setValueData(valueData);
             picker.setData(labelData);
+            if (selectedIndex >= 0 && selectedIndex < labelData.size()) {
+                picker.setSelectedItemPosition(selectedIndex, false);
+            }
         }
     }
 
@@ -83,10 +86,11 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
     public void setSelectedIndex(ReactWheelCurvedPicker picker, int index) {
         //if (picker != null && picker.getState() == WheelPicker.SCROLL_STATE_IDLE) {
         // Log.d("Index from React", index + "");
-        if (picker != null) {
-            picker.setSelectedItemPosition(index,false);
-            picker.invalidate();
-        }
+        selectedIndex = index;
+        // if (picker != null) {
+        //     picker.setSelectedItemPosition(index);
+        //     picker.invalidate();
+        // }
     }
 
     // @ReactProp(name="atmospheric")
