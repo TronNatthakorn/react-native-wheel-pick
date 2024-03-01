@@ -45,6 +45,8 @@ export default class DatePicker extends PureComponent {
     // style: ViewPropTypes.style,
     // textColor: ColorPropType,
     textSize: PropTypes.number,
+    minuteInterval: PropTypes.number,
+    maximumHours: PropTypes.number,
   };
 
   static defaultProps = {
@@ -61,12 +63,14 @@ export default class DatePicker extends PureComponent {
     style: null,
     textColor: '#333',
     textSize: 26,
+    minuteInterval: 1,
+    maximumHours: 24,
   };
 
   constructor(props) {
     super(props);
 
-    const { date, minimumDate, maximumDate, labelUnit } = props;
+    const { date, minimumDate, maximumDate, labelUnit, minuteInterval, maximumHours } = props;
 
     this.state = { date, monthRange: [], yearRange: [] };
 
@@ -240,11 +244,13 @@ export default class DatePicker extends PureComponent {
     const [hours, minutes] = [[], []];
 
     for (let i = 0; i <= 24; i += 1) {
-      hours.push(i);
+      if (i<=this.props.maximumHours)
+        hours.push(i);
     }
 
     for (let i = 0; i <= 59; i += 1) {
-      minutes.push(i);
+      if (i%this.props.minuteInterval === 0)
+        minutes.push(i);
     }
 
     return [
