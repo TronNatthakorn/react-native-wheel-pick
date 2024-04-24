@@ -28,6 +28,7 @@ export default class Picker extends Component {
 
   static defaultProps = {
     textColor: '#333',
+    textColor1: '#333',
     textSize: 26,
     itemStyle: null,
     // onValueChange: () => {}, // Require
@@ -58,7 +59,11 @@ export default class Picker extends Component {
       }
     }
   }
-
+  componentDidUpdate(prevProps) {
+    if (prevProps.selectedValue !== this.props.selectedValue) {
+      this.setState({ selectedValue: this.props.selectedValue });
+    }
+  }
   render() {
     const { pickerData, style, ...props } = this.props;
 
@@ -88,7 +93,7 @@ export default class Picker extends Component {
             key={index}
             value={typeof data.value !== 'undefined' ? data.value : data.toString()}
             label={typeof data.label !== 'undefined' ? data.label : data.toString()}
-            color={props.textColor}
+            color={this.state.selectedValue === (typeof data.value !== 'undefined' ? data.value : data.toString()) ? props.textColor1 : props.textColor}
           />
         ))}
       </WheelCurvedPicker>
