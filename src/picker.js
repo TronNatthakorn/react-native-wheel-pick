@@ -45,6 +45,12 @@ export default class Picker extends Component {
     this.props.onValueChange(selectedValue);
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.selectedValue !== this.props.selectedValue) {
+      this.setState({ selectedValue: this.props.selectedValue });
+    }
+  }
+
   validateDeprecateProps = (oldProp = 'curtain', newProp = '') => {
     if(this.props){
       if(typeof this.props[oldProp] !== 'undefined'){
