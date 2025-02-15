@@ -145,6 +145,7 @@ OR you can fork this project instead.
 ### 1.2.3 (Feb 15 2024)
 - Fix state is not updating after onValueChange in Picker Component. Thanks to [@spasma
 ](https://github.com/TronNatthakorn/react-native-wheel-pick/issues/52)
+- Test on React Native Version 0.77
 
 [Android]
 - Support [UIManager New Architecture of React Native](https://github.com/reactwg/react-native-new-architecture/discussions/201)
