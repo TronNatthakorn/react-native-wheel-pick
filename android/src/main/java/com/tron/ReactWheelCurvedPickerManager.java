@@ -1,6 +1,7 @@
 package com.tron;
 
 import android.graphics.Color;
+import android.os.Handler;
 
 import com.aigestudio.wheelpicker.WheelPicker;
 import com.facebook.react.bridge.ReadableArray;
@@ -84,8 +85,18 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         //if (picker != null && picker.getState() == WheelPicker.SCROLL_STATE_IDLE) {
         // Log.d("Index from React", index + "");
         if (picker != null) {
-            picker.setSelectedItemPosition(index);
-            picker.invalidate();
+            // picker.setSelectedItemPosition(index);
+            // picker.invalidate();
+
+            final Handler handler = new Handler();
+
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    picker.setSelectedItemPosition(index);
+                    picker.invalidate();
+                }
+            });
         }
     }
 
