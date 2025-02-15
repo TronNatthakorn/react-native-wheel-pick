@@ -6,9 +6,25 @@ buildscript {
 
 apply plugin: 'com.android.library'
 
+def isNewArchitectureEnabled() {
+    return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
+}
+
+if (isNewArchitectureEnabled()) {
+    apply plugin: 'com.facebook.react'
+}
+
 android {
     compileSdkVersion 33
     namespace 'com.tron'
+
+    defaultConfig {
+        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString())
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
 }
 
 dependencies {
