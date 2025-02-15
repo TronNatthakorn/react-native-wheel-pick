@@ -20,6 +20,11 @@ import com.facebook.react.uimanager.events.Event;
 import com.facebook.react.uimanager.events.EventDispatcher;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
+import com.facebook.react.uimanager.UIManagerHelper;
+
+// UIManagerType;
+import com.facebook.react.uimanager.common.UIManagerType;
+
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +40,13 @@ public class ReactWheelCurvedPicker extends WheelPicker {
 
     public ReactWheelCurvedPicker(ReactContext reactContext) {
         super(reactContext);
-        mEventDispatcher = reactContext.getNativeModule(UIManagerModule.class).getEventDispatcher();
+
+        if(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {	
+            mEventDispatcher = (UIManagerHelper.getUIManager(reactContext, 1 /** UIManagerType */)).getEventDispatcher();
+        } else {
+            mEventDispatcher = reactContext.getNativeModule(UIManagerModule.class).getEventDispatcher();
+        }
+        
         setOnWheelChangeListener(new OnWheelChangeListener() {
             @Override
             public void onWheelScrolled(int offset) {
