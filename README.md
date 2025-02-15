@@ -24,6 +24,8 @@ npm install @react-native-picker/picker --save-dev --legacy-peer-deps
 npm install @react-native-community/datetimepicker --save-dev --legacy-peer-deps
 npx pod-install
 
+npx react-native start --reset-cache // clear cache
+
 npx react-native run-ios // re-build native-code
 npx react-native run-android // re-build native-code for gradle
 ```
@@ -140,6 +142,14 @@ You can sponsor me
 OR you can fork this project instead.
 
 ## Release Note
+### 1.2.3 (Feb 15 2024)
+- Fix state is not updating after onValueChange in Picker Component. Thanks to [@spasma
+](https://github.com/TronNatthakorn/react-native-wheel-pick/issues/52)
+
+[Android]
+- Support [UIManager New Architecture of React Native](https://github.com/reactwg/react-native-new-architecture/discussions/201)
+- Use Handler for fix 23 index problem. Thanks to [@mykhailoperemitko](https://github.com/TronNatthakorn/react-native-wheel-pick/issues/44) [@A-ANing](https://github.com/A-ANing)
+
 ### 1.2.2 (June 7 2023)
 [iOS]
 - Now iOS can use `textColor`, too. [Add missing color option for iOS](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/38) [@aurotones](https://github.com/aurotones)
