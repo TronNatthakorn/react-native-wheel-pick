@@ -1,7 +1,7 @@
 
 # [react-native-wheel-pick](https://www.npmjs.com/package/react-native-wheel-pick)
 
-React native wheel picker for both iOS and android. (Support DatePicker)
+React native wheel picker for both iOS and android.
 
 This is not original but inspired by [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker)
 
@@ -79,7 +79,6 @@ onDateChange={(date: Date) => { console.log(date) }}
   maximumDate={new Date('2050-12-31')}
   onDateChange={date => { console.log(date) }}
 />
-
 ```
 ```jsx
 // pickerData also support array of object. (Optional Way)
@@ -110,7 +109,7 @@ onDateChange={(date: Date) => { console.log(date) }}
 ```
 ```jsx
 // Android Only.
-// These is special props for Android. (iOS not work)
+// These is special props for Android. (iOS and Web not work)
 // You can also use these props for DatePicker, too.
 <Picker
   textSize={20}
@@ -129,6 +128,10 @@ onDateChange={(date: Date) => { console.log(date) }}
 <DatePicker
   order='D-M-Y' // Default is M-D-Y
 />
+
+// Test on Web (Platform.OS === 'Web')
+<Picker style={{ height: 50 }} />
+// DatePicker still not supported on Web.
 ```
 ## FYI
 
@@ -142,6 +145,11 @@ You can sponsor me
 OR you can fork this project instead.
 
 ## Release Note
+### 1.2.4 (Feb 17 2025)
+[Web]
+- Test on `Platform.OS === 'web'`
+- Only `<Picker />` can use on Web. `<DatePicker />` still not supported on Web.
+
 ### 1.2.3 (Feb 15 2024)
 - Fix state is not updating after onValueChange in Picker Component. Thanks to [@spasma
 ](https://github.com/TronNatthakorn/react-native-wheel-pick/issues/52)
