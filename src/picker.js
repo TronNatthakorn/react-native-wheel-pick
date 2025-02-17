@@ -82,9 +82,33 @@ export default class Picker extends Component {
       this.validateDeprecateProps('indicatorSize', 'selectLineSize');
     }
 
+    const propsForWeb = { ...props }
+
+    if(Platform.OS === 'web'){
+      propsForWeb.textcolor = propsForWeb.textColor
+      propsForWeb.textsize = propsForWeb.textSize
+
+      propsForWeb.selecttextcolor = propsForWeb.selectTextColor
+      propsForWeb.isshowselectbackground = propsForWeb.isShowSelectBackground.toString()
+      propsForWeb.selectbackgroundcolor = propsForWeb.selectBackgroundColor
+      propsForWeb.isshowselectline = propsForWeb.isShowSelectLine.toString()
+      propsForWeb.selectlinecolor = propsForWeb.selectLineColor
+      propsForWeb.selectlinesize = propsForWeb.selectLineSize
+
+      delete propsForWeb.textColor
+      delete propsForWeb.textSize
+
+      delete propsForWeb.selectTextColor
+      delete propsForWeb.isShowSelectBackground
+      delete propsForWeb.selectBackgroundColor
+      delete propsForWeb.isShowSelectLine
+      delete propsForWeb.selectLineColor
+      delete propsForWeb.selectLineSize
+    }
+
     return (
       <WheelCurvedPicker
-        {...props}
+        {...(Platform.OS === 'web'? propsForWeb: props)}
         style={[styles.picker, style]}
         selectedValue={this.state.selectedValue}
         onValueChange={this.handleChange}
@@ -94,7 +118,7 @@ export default class Picker extends Component {
             key={index}
             value={typeof data.value !== 'undefined' ? data.value : data.toString()}
             label={typeof data.label !== 'undefined' ? data.label : data.toString()}
-            color={props.textColor}
+            color={(Platform.OS === 'web'? propsForWeb.textcolor: props.textColor)}
           />
         ))}
       </WheelCurvedPicker>
