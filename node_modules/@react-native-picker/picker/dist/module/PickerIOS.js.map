@@ -1,0 +1,1 @@
+{"version":3,"names":["React","UnimplementedView","PickerIOS","createElement","Item"],"sourceRoot":"../../js","sources":["PickerIOS.js"],"mappings":"AAIA,OAAO,KAAKA,KAAK,MAAM,OAAO;AAC9B,OAAOC,iBAAiB,MAAM,qBAAqB;AAEnD,SAASC,SAASA,CAAA,EAAe;EAC/B,oBAAOF,KAAA,CAAAG,aAAA,CAACF,iBAAiB,MAAE,CAAC;AAC9B;;AAEA;AACA;AACA;AACAC,SAAS,CAACE,IAAI,GAAGH,iBAAiB;AAElC,eAAeC,SAAS"}

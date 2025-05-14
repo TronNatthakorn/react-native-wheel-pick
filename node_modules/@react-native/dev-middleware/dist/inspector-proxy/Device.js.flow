@@ -1,0 +1,50 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow strict-local
+ * @format
+ * @oncall react_native
+ */
+
+import type { EventReporter } from "../types/EventReporter";
+import type { CreateCustomMessageHandlerFn } from "./CustomMessageHandler";
+import type { Page } from "./types";
+
+import WS from "ws";
+
+export type DeviceOptions = $ReadOnly<{
+  id: string,
+  name: string,
+  app: string,
+  socket: WS,
+  projectRoot: string,
+  eventReporter: ?EventReporter,
+  createMessageMiddleware: ?CreateCustomMessageHandlerFn,
+  deviceRelativeBaseUrl: URL,
+  serverRelativeBaseUrl: URL,
+  isProfilingBuild: boolean,
+}>;
+
+/**
+ * Device class represents single device connection to Inspector Proxy. Each device
+ * can have multiple inspectable pages.
+ */
+declare export default class Device {
+  constructor(deviceOptions: DeviceOptions): void;
+  dangerouslyRecreateDevice(deviceOptions: DeviceOptions): void;
+  getName(): string;
+  getApp(): string;
+  getPagesList(): $ReadOnlyArray<Page>;
+  handleDebuggerConnection(
+    socket: WS,
+    pageId: string,
+    $ReadOnly<{
+      debuggerRelativeBaseUrl: URL,
+      userAgent: string | null,
+    }>
+  ): void;
+  dangerouslyGetSocket(): WS;
+}

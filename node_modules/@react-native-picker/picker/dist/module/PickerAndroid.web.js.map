@@ -1,0 +1,1 @@
+{"version":3,"names":["React","UnimplementedView","PickerAndroid","createElement","Item"],"sourceRoot":"../../js","sources":["PickerAndroid.web.js"],"mappings":"AAIA,OAAO,KAAKA,KAAK,MAAM,OAAO;AAC9B,OAAOC,iBAAiB,MAAM,qBAAqB;AAEnD,SAASC,aAAaA,CAAA,EAAe;EACnC,oBAAOF,KAAA,CAAAG,aAAA,CAACF,iBAAiB,MAAE,CAAC;AAC9B;;AAEA;AACA;AACA;AACAC,aAAa,CAACE,IAAI,GAAGH,iBAAiB;AAEtC,eAAeC,aAAa"}

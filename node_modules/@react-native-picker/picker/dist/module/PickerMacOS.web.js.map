@@ -1,0 +1,1 @@
+{"version":3,"names":["React","UnimplementedView","PickerMacOS","createElement","Item"],"sourceRoot":"../../js","sources":["PickerMacOS.web.js"],"mappings":"AAIA,OAAO,KAAKA,KAAK,MAAM,OAAO;AAC9B,OAAOC,iBAAiB,MAAM,qBAAqB;AAEnD,SAASC,WAAWA,CAAA,EAAe;EACjC,oBAAOF,KAAA,CAAAG,aAAA,CAACF,iBAAiB,MAAE,CAAC;AAC9B;;AAEA;AACA;AACA;AACAC,WAAW,CAACE,IAAI,GAAGH,iBAAiB;AAEpC,eAAeC,WAAW"}
