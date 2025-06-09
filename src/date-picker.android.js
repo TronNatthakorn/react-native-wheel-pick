@@ -239,12 +239,12 @@ export default class DatePicker extends PureComponent {
 
     const [hours, minutes] = [[], []];
 
-    for (let i = 0; i <= 24; i += 1) {
-      hours.push(i);
+    for (let i = 0; i <= 23; i += 1) {
+      hours.push({ value: i, label: `${i}` })
     }
 
     for (let i = 0; i <= 59; i += 1) {
-      minutes.push(i);
+      minutes.push({ value: i, label: `${i}` })
     }
 
     return [
