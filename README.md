@@ -133,6 +133,13 @@ onDateChange={(date: Date) => { console.log(date) }}
 <Picker style={{ height: 50 }} />
 // DatePicker still not supported on Web.
 ```
+## How to change Font Family for Android
+
+1. Goto `android/app/src/main/res/values/styles.xml`
+2. Add this code `<item name="wheel_font_path">fonts/[FONT_NAME].ttf</item>`
+
+Thanks to [@RMabroukS](https://github.com/TronNatthakorn/react-native-wheel-pick/issues/58)
+
 ## FYI
 
 I rarely check this lib. (6 Months - 3 Years). Up on my life's time.
@@ -145,6 +152,11 @@ You can sponsor me
 OR you can fork this project instead.
 
 ## Release Note
+
+### 1.2.5 (Jun 14 2025)
+[Android]
+- Fix Android DatePicker time mode default selection issue and correct hour range. Thanks to [@harryxu](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/66)
+
 ### 1.2.4 (Feb 17 2025)
 [Web]
 - Test on `Platform.OS === 'web'`
