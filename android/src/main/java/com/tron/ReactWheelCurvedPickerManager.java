@@ -190,6 +190,14 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         }
     }
 
+   // @ReactProp(name="isCyclic")
+   @ReactProp(name="isCyclic")
+   public void setCyclic(ReactWheelCurvedPicker picker, boolean isCyclic) {
+       if (picker != null) {
+            picker.setCyclic(isCyclic);
+      }
+   }
+
     @Override
     public String getName() {
         return REACT_CLASS;
