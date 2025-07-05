@@ -122,6 +122,8 @@ onDateChange={(date: Date) => { console.log(date) }}
   isShowSelectLine={false} // Default is true
   selectLineColor='black'
   selectLineSize={6} // Default is 4
+
+  isCyclic={true} // Support Infinitely Scrolling.
 />
 
 // Android Only.
@@ -152,6 +154,10 @@ You can sponsor me
 OR you can fork this project instead.
 
 ## Release Note
+
+### 1.2.6 (Jul 5 2025)
+[Android]
+- Add support for `isCyclic` property on Android. (Infinitely Scrolling) Thanks to [@cip123](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/67)
 
 ### 1.2.5 (Jun 14 2025)
 [Android]
