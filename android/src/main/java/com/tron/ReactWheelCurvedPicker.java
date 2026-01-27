@@ -41,7 +41,7 @@ public class ReactWheelCurvedPicker extends WheelPicker {
     public ReactWheelCurvedPicker(ReactContext reactContext) {
         super(reactContext);
 
-        if(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {	
+        if(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {   
             mEventDispatcher = (UIManagerHelper.getUIManager(reactContext, 1 /** UIManagerType */)).getEventDispatcher();
         } else {
             mEventDispatcher = reactContext.getNativeModule(UIManagerModule.class).getEventDispatcher();
@@ -110,6 +110,8 @@ class ItemSelectedEvent extends Event<ItemSelectedEvent> {
         Class mValueClass = mValue.getClass();
         if (mValueClass == Integer.class) {
             eventData.putInt("data", (Integer) mValue);
+        } else if (mValueClass == Double.class) {
+            eventData.putDouble("data", (Double) mValue);
         } else if (mValueClass == String.class) {
             eventData.putString("data", mValue.toString());
         }
