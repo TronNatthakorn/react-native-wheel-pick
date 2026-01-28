@@ -41,7 +41,7 @@ public class ReactWheelCurvedPicker extends WheelPicker {
     public ReactWheelCurvedPicker(ReactContext reactContext) {
         super(reactContext);
 
-        if(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {   
+        if(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
             mEventDispatcher = (UIManagerHelper.getUIManager(reactContext, 1 /** UIManagerType */)).getEventDispatcher();
         } else {
             mEventDispatcher = reactContext.getNativeModule(UIManagerModule.class).getEventDispatcher();
