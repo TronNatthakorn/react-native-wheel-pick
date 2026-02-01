@@ -70,7 +70,8 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
                 if (itemMap.getType("value") == ReadableType.String) {
                     valueData.add(itemMap.getString("value"));
                 } else if (itemMap.getType("value") == ReadableType.Number) {
-                    valueData.add(itemMap.getInt("value"));
+                    // Store as Double to preserve decimal precision
+                    valueData.add(itemMap.getDouble("value"));
                 }
 
                 labelData.add(itemMap.getString("label"));
