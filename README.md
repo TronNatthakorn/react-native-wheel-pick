@@ -155,6 +155,10 @@ OR you can fork this project instead.
 
 ## Release Note
 
+### 1.2.7 (Feb 1 2026)
+[Android]
+- Add support for decimal number on Native Android. Thanks to [@ArnaudDerosin](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/69)
+
 ### 1.2.6 (Jul 5 2025)
 [Android]
 - Add support for `isCyclic` property on Android. (Infinitely Scrolling) Thanks to [@cip123](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/67)
