@@ -155,7 +155,7 @@ OR you can fork this project instead.
 
 ## Release Note
 
-### 1.2.7 (Feb 1 2026)
+### 1.2.8 (Feb 14 2026)
 [Android]
 - Add support for decimal number on Native Android. Thanks to [@ArnaudDerosin](https://github.com/TronNatthakorn/react-native-wheel-pick/pull/69)
 
